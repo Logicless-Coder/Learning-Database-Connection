@@ -1,22 +1,5 @@
 import React, { Component } from "react";
 
-const createUser = () => {
-  console.log(this.state.email);
-  console.log(this.state.password);
-};
-
-const handleEmailChange = (event) => {
-  this.setState({
-    email: event.target.value,
-  });
-};
-
-const handlePasswordChange = (event) => {
-  this.setState({
-    password: event.target.value,
-  });
-};
-
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +10,20 @@ class Register extends Component {
     };
   }
 
+  createUser = () => {};
+
+  handleEmailChange = (event) => {
+    this.setState({
+      email: event.target.value,
+    });
+  };
+
+  handlePasswordChange = (event) => {
+    this.setState({
+      password: event.target.value,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -36,16 +33,16 @@ class Register extends Component {
             name="email"
             placeholder="Enter your email address"
             value={this.state.email}
-            onChange={handleEmailChange}
+            onChange={this.handleEmailChange}
           />
           <input
             type="password"
             name="password"
             placeholder="Enter your password"
             value={this.state.password}
-            onChange={handlePasswordChange}
+            onChange={this.handlePasswordChange}
           />
-          <input type="submit" onClick={createUser} />
+          <input type="submit" onClick={this.createUser} />
         </form>
       </div>
     );
